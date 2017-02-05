@@ -1,0 +1,36 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+<div class="row"  style="margin-top: 10%">
+  <div class="one-half column">
+    <h4>Sign up</h4>
+    <p>To create a new account, Sign up. If you already created an account, Click to <a href="/auth/login">Log in</a>. If you need some help hit up the <a href="/gettingStarted">Getting Started tutorial</a>.</p>
+</div>
+<div class="one-half column">
+    
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/auth/signup" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="button button-primary">Signup</button>
+    </form>
+
+    <p>Already have an account? <a href="/auth/login">Log in</a><br>
+    Or go <a href="/">home</a>.</p>
+
+
+  </div>
+</div>
+</div>
+<% include ../partials/footer.ejs %>
